@@ -18,5 +18,18 @@ function addBookToLibrary(title, author, pages, read = false) {
 }
 
 addBookToLibrary("The Hobbit", "Tolkien", 401);
+addBookToLibrary("Games Of Thrones", "George R. R. Martin", 603);
 
-console.log(myLibrary);
+myLibrary.forEach((book) => console.log(book));
+
+const dialog = document.querySelector("dialog");
+const showButton = document.querySelector("dialog + .btn-open");
+const closeButton = document.querySelector(".btn-close");
+
+showButton.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+closeButton.addEventListener("click", () => {
+  dialog.close();
+});
